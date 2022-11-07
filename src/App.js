@@ -1,25 +1,32 @@
-import logo from './logo.svg';
-import './App.css';
+// Lấy thư viện
+import { Box } from '@mui/material';
+import { Routes, Route } from 'react-router-dom';
+import { ToastContainer } from 'react-toastify';
+import { PageDashboard, PageHome, PageRegister } from './pages';
 
+import 'react-toastify/dist/ReactToastify.css';
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+    return (
+        <Box width="100%" height="100%">
+            {/* Hệ thông các trang */}
+            <Routes>
+                <Route path="/" element={<PageHome />} />
+                <Route path="/register" element={<PageRegister />} />
+                <Route path="/dashboard" element={<PageDashboard />} />
+            </Routes>
 
+            {/* Cấu hình hiện thị thông báo */}
+            <ToastContainer
+                autoClose={2200}
+                position="top-right"
+                closeOnClick
+                draggable={true}
+                theme="colored"
+                newestOnTop={true}
+                draggablePercent={60}
+            />
+        </Box>
+    );
+}
+// xuất function component ra cho các file khác dùng
 export default App;
