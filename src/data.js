@@ -89,19 +89,19 @@ export const listDay = [
 export const listTeacher = [
     {
         name: 'Phan Trần Minh Khuê',
-        gender: 'Male',
+        gender: 'Nam',
         course: 'Cơ Sở Lập Trình',
         color: '#cccccc',
     },
     {
         name: 'Hà Minh Tuấn',
-        gender: 'Male',
+        gender: 'Nam',
         course: 'Đại Số Tuyến Tính',
         color: '#ff6707',
     },
     {
         name: 'Hồ Hướng Thiên',
-        gender: 'Male',
+        gender: 'Nam',
         course: 'Nhập Môn Tin Học',
         color: '#333333',
     },
