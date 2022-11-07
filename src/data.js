@@ -92,18 +92,104 @@ export const listTeacher = [
         gender: 'Nam',
         course: 'Cơ Sở Lập Trình',
         color: '#cccccc',
+        lessonRegister: [
+            {
+                room: '1',
+                day: 'Thứ 2',
+                lesson: '1',
+            },
+            {
+                room: '1',
+                day: 'Thứ 2',
+                lesson: '2',
+            },
+            {
+                room: '1',
+                day: 'Thứ 2',
+                lesson: '3',
+            },
+            {
+                room: '1',
+                day: 'Thứ 2',
+                lesson: '4',
+            },
+            {
+                room: '1',
+                day: 'Thứ 3',
+                lesson: '8',
+            },
+            {
+                room: '1',
+                day: 'Thứ 3',
+                lesson: '9',
+            },
+        ],
     },
     {
         name: 'Hà Minh Tuấn',
         gender: 'Nam',
         course: 'Đại Số Tuyến Tính',
         color: '#ff6707',
+        lessonRegister: [
+            {
+                room: '3',
+                day: 'Thứ 2',
+                lesson: '2',
+            },
+            {
+                room: '3',
+                day: 'Thứ 2',
+                lesson: '3',
+            },
+            {
+                room: '3',
+                day: 'Thứ 3',
+                lesson: '1',
+            },
+            {
+                room: '3',
+                day: 'Thứ 3',
+                lesson: '2',
+            },
+            {
+                room: '3',
+                day: 'Thứ 3',
+                lesson: '3',
+            },
+            {
+                room: '4',
+                day: 'Thứ 3',
+                lesson: '4',
+            },
+        ],
     },
     {
         name: 'Hồ Hướng Thiên',
         gender: 'Nam',
         course: 'Nhập Môn Tin Học',
         color: '#333333',
+        lessonRegister: [
+            {
+                room: '1',
+                day: 'Thứ 4',
+                lesson: '1',
+            },
+            {
+                room: '1',
+                day: 'Thứ 4',
+                lesson: '2',
+            },
+            {
+                room: '1',
+                day: 'Thứ 4',
+                lesson: '3',
+            },
+            {
+                room: '1',
+                day: 'Thứ 4',
+                lesson: '4',
+            },
+        ],
     },
 ];
 

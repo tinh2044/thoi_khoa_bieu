@@ -11,6 +11,7 @@ import { actionsSchedule } from '../../components/Schedule/ScheduleSlice';
 import 'tippy.js/dist/tippy.css';
 import 'tippy.js/animations/shift-away.css';
 import 'tippy.js/themes/light.css';
+import { actionsTeacher } from '../../components/Teacher/TeacherSlice';
 
 function ChooseLesson({ data, day, lesson, room }) {
     // kiểm tra tiết này có người đăng kí chưa
@@ -45,6 +46,17 @@ function ChooseLesson({ data, day, lesson, room }) {
                     data: user,
                 }),
             );
+            // Thêm tiết học vào tài khoản giáo viên
+            dispatch(
+                actionsTeacher.addLesson({
+                    checkName: user.name,
+                    data: {
+                        room: room[room.length - 1],
+                        day: day.name,
+                        lesson: lesson.id[lesson.id.length - 1],
+                    },
+                }),
+            );
             // Thông báo giáo viên đã đăng kí thành công
             toast.success(
                 `Bạn đã đăng kí ${lesson.name[0].toLowerCase() + lesson.name.slice(1)} của phòng ${
@@ -75,6 +87,17 @@ function ChooseLesson({ data, day, lesson, room }) {
                 room: room,
                 day: day.id,
                 lesson: lesson.id,
+            }),
+        );
+
+        dispatch(
+            actionsTeacher.deleteLesson({
+                checkName: user.name,
+                data: {
+                    room: room[room.length - 1],
+                    day: day.name,
+                    lesson: lesson.id[lesson.id.length - 1],
+                },
             }),
         );
     };
@@ -134,6 +157,9 @@ function ChooseLesson({ data, day, lesson, room }) {
                             ':hover .MuiIconButton-root': {
                                 opacity: '1 !important',
                             },
+                        }}
+                        onClick={(e) => {
+                            e.stopPropagation();
                         }}
                     >
                         {/* Nếu tên trong thời khóa biểu giống tên đang đăng nhập => cho phép xóa */}

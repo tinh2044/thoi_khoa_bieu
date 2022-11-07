@@ -61,7 +61,7 @@ function FormRegister() {
         if (validateForm) {
             navigate('/dashboard');
             // gửi actions lên redux để thêm một giáo viên mới
-            dispatch(actionsTeacher.addTeacher(formValues));
+            dispatch(actionsTeacher.addTeacher({ ...formValues, lessonRegister: [] }));
             // Gửi actions lên redux để thay đổi tài khoản đang đăng nhập
 
             dispatch(actionsUser.change(formValues));

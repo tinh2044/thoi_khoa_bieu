@@ -16,6 +16,23 @@ const teacherSlice = createSlice({
 
             state[index] = action.payload.data;
         },
+
+        addLesson: (state, action) => {
+            const index = state.findIndex((item) => item.name === action.payload.checkName);
+            state[index].lessonRegister.push(action.payload.data);
+        },
+
+        deleteLesson: (state, action) => {
+            const { room, day, lesson } = action.payload.data;
+            console.log(room, day, lesson);
+            const index = state.findIndex((item) => item.name === action.payload.checkName);
+            const newLesson = state[index].lessonRegister.filter((item) => {
+                console.log(item.room !== room || item.day !== day || item.lesson !== lesson);
+                return item.room !== room || item.day !== day || item.lesson !== lesson;
+            });
+            console.log(newLesson);
+            state[index].lessonRegister = newLesson;
+        },
     },
 });
 

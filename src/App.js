@@ -5,6 +5,7 @@ import { ToastContainer } from 'react-toastify';
 import { PageDashboard, PageHome, PageRegister } from './pages';
 
 import 'react-toastify/dist/ReactToastify.css';
+
 function App() {
     return (
         <Box width="100%" height="100%">

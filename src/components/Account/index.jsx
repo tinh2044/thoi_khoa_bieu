@@ -6,11 +6,14 @@ import { useSelector } from 'react-redux';
 import { selectorUser } from '../../redux/selector';
 import FormEdit from '../FormEdit';
 import Teacher from '../Teacher';
+import CalendarLesson from '../CalendarLesson';
 
 function Account() {
     const user = useSelector(selectorUser);
-    // Xữ lý hiện thị menu chọn màu
+    // Xử lý hiện thị menu chọn màu
     const [showMenuEdit, setShowMenuEdit] = useState(false);
+    // Xử lý hiện thị danh sách tiết đã đăng kí
+    const [showListLesson, setShowListLesson] = useState(false);
 
     return (
         <Grid item sx={12} md={3.5}>
@@ -25,7 +28,14 @@ function Account() {
                         Đăng xuất
                     </Button>
                 </Link>
-
+                <Button
+                    variant="contained"
+                    color="success"
+                    underline="none"
+                    onClick={() => setShowListLesson(!showListLesson)}
+                >
+                    Xem lịch
+                </Button>
                 <Button
                     variant="contained"
                     color="info"
@@ -37,6 +47,9 @@ function Account() {
             </Box>
             {/* Nơi chỉnh sửa thông tin */}
             {showMenuEdit && <FormEdit user={user} handleHideForm={setShowMenuEdit} />}
+
+            {/* Xem lịch đã đăng kí */}
+            {showListLesson && <CalendarLesson />}
         </Grid>
     );
 }
