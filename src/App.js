@@ -5,8 +5,6 @@ import { ToastContainer } from 'react-toastify';
 import { PageDashboard, PageHome, PageRegister } from './pages';
 
 import 'react-toastify/dist/ReactToastify.css';
-import { useSelector } from 'react-redux';
-import { selectorLessonsUser } from './redux/selector';
 
 function App() {
     return (
@@ -19,15 +17,7 @@ function App() {
             </Routes>
 
             {/* Cấu hình hiện thị thông báo */}
-            <ToastContainer
-                autoClose={2200}
-                position="top-right"
-                closeOnClick
-                draggable={true}
-                theme="colored"
-                newestOnTop={true}
-                draggablePercent={60}
-            />
+            <ToastContainer autoClose={2200} position="top-right" closeOnClick theme="colored" newestOnTop={true} />
         </Box>
     );
 }

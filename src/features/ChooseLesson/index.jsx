@@ -101,6 +101,13 @@ function ChooseLesson({ data, day, lesson, room }) {
             }),
         );
     };
+    const handleNotifications = (e) => {
+        e.stopPropagation();
+
+        if (data.name !== user.name) {
+            toast.info('Đã có người đăng ký');
+        }
+    };
     // Hiện thị tip
     const renderTooltip = (props) => {
         return (
@@ -158,9 +165,7 @@ function ChooseLesson({ data, day, lesson, room }) {
                                 opacity: '1 !important',
                             },
                         }}
-                        onClick={(e) => {
-                            e.stopPropagation();
-                        }}
+                        onClick={handleNotifications}
                     >
                         {/* Nếu tên trong thời khóa biểu giống tên đang đăng nhập => cho phép xóa */}
                         {user.name === data.name && (
