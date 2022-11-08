@@ -15,5 +15,8 @@ export const selectorNameTeachers = createSelector(selectorListTeacher, (listTea
 export const selectorLessonsUser = createSelector(selectorListTeacher, selectorUser, (listTeacher, user) => {
     const teacher = listTeacher.find((teacher) => teacher.name === user.name);
     // console.log(teacher.lessonRegister.sort());
-    return teacher.lessonRegister;
+
+    const listLesson = teacher.lessonRegister;
+
+    return listLesson;
 });

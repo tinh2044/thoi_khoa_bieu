@@ -5,6 +5,8 @@ import { ToastContainer } from 'react-toastify';
 import { PageDashboard, PageHome, PageRegister } from './pages';
 
 import 'react-toastify/dist/ReactToastify.css';
+import { useSelector } from 'react-redux';
+import { selectorLessonsUser } from './redux/selector';
 
 function App() {
     return (

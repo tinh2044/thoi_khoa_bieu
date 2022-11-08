@@ -4,6 +4,7 @@ import { useSelector } from 'react-redux';
 import { selectorLessonsUser } from '../../redux/selector';
 
 function CalendarLesson() {
+    // Lấy danh sách giáo viên đã đăng kí
     const lessonRegister = useSelector(selectorLessonsUser);
 
     return (
