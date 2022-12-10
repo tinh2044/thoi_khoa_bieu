@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Box, Button, Grid, Typography } from '@mui/material';
 import { Link } from 'react-router-dom';
 import { useSelector } from 'react-redux';
-
+import { selectorLessonsUser } from '../../redux/selector';
 import { selectorUser } from '../../redux/selector';
 import FormEdit from '../FormEdit';
 import Teacher from '../Teacher';
@@ -10,6 +10,7 @@ import CalendarLesson from '../CalendarLesson';
 
 function Account() {
     const user = useSelector(selectorUser);
+    const lessonRegister = useSelector(selectorLessonsUser);
     // Xử lý hiện thị menu chọn màu
     const [showMenuEdit, setShowMenuEdit] = useState(false);
     // Xử lý hiện thị danh sách tiết đã đăng kí
@@ -49,7 +50,7 @@ function Account() {
             {showMenuEdit && <FormEdit user={user} handleHideForm={setShowMenuEdit} />}
 
             {/* Xem lịch đã đăng kí */}
-            {showListLesson && <CalendarLesson />}
+            {showListLesson && <CalendarLesson lessonRegister={lessonRegister} />}
         </Grid>
     );
 }

@@ -51,9 +51,9 @@ function ChooseLesson({ data, day, lesson, room }) {
                 actionsTeacher.addLesson({
                     checkName: user.name,
                     data: {
-                        room: room[room.length - 1],
+                        room: parseInt(room[room.length - 1]),
                         day: day.name,
-                        lesson: lesson.id[lesson.id.length - 1],
+                        lesson: parseInt(lesson.id[lesson.id.length - 1]),
                     },
                 }),
             );

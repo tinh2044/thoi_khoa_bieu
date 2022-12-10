@@ -27,10 +27,8 @@ const teacherSlice = createSlice({
             console.log(room, day, lesson);
             const index = state.findIndex((item) => item.name === action.payload.checkName);
             const newLesson = state[index].lessonRegister.filter((item) => {
-                console.log(item.room !== room || item.day !== day || item.lesson !== lesson);
                 return item.room !== room || item.day !== day || item.lesson !== lesson;
             });
-            console.log(newLesson);
             state[index].lessonRegister = newLesson;
         },
     },
